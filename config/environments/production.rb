@@ -61,7 +61,9 @@ Rails.application.configure do
   # Set this to true and configure the email server for immediate delivery to raise delivery errors. 
 	
 	# Setup the mailer config
-	config.action_controller.default_url_options = {:host => request.env["SERVER_NAME"]}
+	config.action_controller.default_url_options = {
+		:host => https://secret-lowlands.herokuapp.com
+		}
 	config.action_mailer.perform_deliveries = true
 	config.action_mailer.raise_delivery_errors = true
 	config.action_mailer.delivery_method = :smtp
