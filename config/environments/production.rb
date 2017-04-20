@@ -62,7 +62,7 @@ Rails.application.configure do
 	
 	# Setup the mailer config
 	config.action_controller.default_url_options = {
-		:host => https://secret-lowlands.herokuapp.com
+		:host => "https://secret-lowlands.herokuapp.com"
 		}
 	config.action_mailer.perform_deliveries = true
 	config.action_mailer.raise_delivery_errors = true
