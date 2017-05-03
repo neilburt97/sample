@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', :require => 'bcrypt'
 gem 'byebug'
 gem 'faker', '1.6.6'
-gem 'bootstrap-will_paginate'
+gem 'will_paginate-bootstrap' 
 gem 'will_paginate', '~> 3.1', '>= 3.1.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
