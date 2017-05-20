@@ -61,19 +61,20 @@ class User < ApplicationRecord
   end
 
   # Send activation email.
+  # Changed to deliver instead of deliver.now
   def send_activation_email
-    UserMailer.account_activation(self).deliver_now
-  end
-
-  # Set the password reset attributes.
-  def create_reset_digest
-    self.reset_token = User.new_token
-    update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
+    UserMailer.account_activation(self).deliver
   end
 
   # Sends password reset email.
   def send_password_reset_email
     UserMailer.password_reset(self).deliver
+  end
+  
+  # Set the password reset attributes.
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
   end
 
   # Return true if a password reset has expired.
