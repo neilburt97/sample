@@ -62,13 +62,13 @@ class User < ApplicationRecord
 
   # Send activation email.
   # Changed to deliver instead of deliver.now
-  def send_activation_email(user)
-    UserMailer.account_activation(user).deliver
+  def send_activation_email
+    UserMailer.account_activation(@user).deliver_now
   end
 
   # Sends password reset email.
-  def send_password_reset_email(user)
-    UserMailer.password_reset(user).deliver
+  def send_password_reset_email
+    UserMailer.password_reset(@user).deliver_now
   end
   
   # Set the password reset attributes.
